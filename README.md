@@ -208,7 +208,7 @@ Installation
 
 Clone the repository:
 
-git clone https://github.com/your-username/cybersecurity-portfolio.git
+git clone https://github.com/boatenggabriel/cybersecurity-portfolio.git
 cd cybersecurity-portfolio
 
 
@@ -282,7 +282,7 @@ Under Build and deployment > Source, select Deploy from a branch.
 
 Select main branch and / (root), then click Save.
 
-Your site will be live at https://<your-username>.github.io/<repo-name>/.
+Your site will be live at https://github.com/boatenggabriel
 
 Roadmap
 
@@ -300,7 +300,7 @@ Roadmap
 
 Vulnerability Disclosure Policy
 
-If you discover a security vulnerability within this project, please send an advisory directly to [your-secure-email@domain.com] or submit an issue flagged as security. Do not open public issues for zero-day vulnerabilities.
+If you discover a security vulnerability within this project, please send an advisory directly to boatenggabriel129@gmail.com or submit an issue flagged as security. Do not open public issues for zero-day vulnerabilities.
 
 Author & Contact
 
