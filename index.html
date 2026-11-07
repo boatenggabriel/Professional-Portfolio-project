@@ -2,416 +2,579 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="SAFEWAVE SOLUTIONS ENTERPRISE Ltd" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> SAFEWAVE SOLUTIONS ENTERPRISE LTD</title>
+    <title>SAFEWAVE SOLUTIONS ENTERPRISE LTD | Boateng Gabriel</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Chart.js for Graphical Insights -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!-- Optional: Load EmailJS SDK for instant browser acknowledgment delivery -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Load Inter font -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Dark background for professional feel */
-            color: #c9d1d9; /* Light text color */
+            background-color: #0d1117;
+            color: #c9d1d9;
         }
-          space-y-4{
-            background-color: rgb(220, 220, 16);
-            border-radius: 25px;
-          }
-          a.href{
-            border-radius: 20px;
-            box-sizing: content-box;
-        
-
-          }
-        
-        {
-            
+        .cyber-border {
+            border: 1px solid rgba(46, 139, 87, 0.3);
+            transition: all 0.3s ease;
         }
-
-
-
-
+        .cyber-border:hover {
+            border-color: rgba(46, 139, 87, 0.8);
+            box-shadow: 0 10px 25px -5px rgba(46, 139, 87, 0.25);
+        }
     </style>
 </head>
-<body>
+<body class="min-h-screen bg-[#0d1117] text-[#c9d1d9]">
 
-    <!-- Main Content Container -->
-    <div id="app" class="min-h-screen">
-
-        <!-- Navigation Bar -->
-        <header class="bg-[#161b22] shadow-lg sticky top-0 z-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-[#2e8b57]">SAFEWAVE SOLUTIONS ENTERPRISE Ltd</a>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="#skills" class="hover:text-[#4caf50] transition duration-200">Skills</a>
-                    <a href="#insights" class="hover:text-[#4caf50] transition duration-200">Insights</a>
-                    <a href="#contact" class="hover:text-[#4caf50] transition duration-200">Contact</a>
-                </nav>
-                <div class="flex items-center space-x-4">
-                    <button id="auth-button" class="bg-[#2e8b57] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#38a865] transition duration-200 shadow-md">
-                        Loading Auth...
-                    </button>
-                    <button id="book-button" onclick="showBookingModal()" class="bg-gray-700 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-600 transition duration-200 shadow-md">
-                        Book a Session
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Hero Section -->
-        <section id="hero" class="py-20 md:py-32 text-center max-w-4xl mx-auto px-4">
-            <h2 class="text-2xl md:text-2xl font-extrabold text-white mb-4">
-                BOATENG GABRIEL<span class="text-[#2e8b57]">
-                  
-             FOUNDER & CEO: SAFEWAVE SOLUTIONS ENTERPRISE Ltd | GHANA <br>
-                 
-                </span>
-            </h2>
-
-            <h5>
-                   BSc Cybersecurity <br>
-                 GHANA COMMUNICATIONS TECHNOLOGY UNIVERSITY. <br>
-                   CISCO CERTIFIED 
-                    ETHICAL HACKER 
-                    MALWARE ANALYST <br>
-                    PHISHING LINKS SCANNING <br>
-                    VIRUS SCANNING
-                    
-            </h5>
-            <p class="text-xl text-gray-400 mb-8">
-                Proactive student specializing in defensive and offensive security principles. Focused on building robust security postures and mitigating emerging digital threats.
-            </p>
-            <a href="#skills" class="inline-block bg-[#2e8b57] text-white px-8 py-3 rounded-xl text-lg font-semibold hover:bg-[#38a865] transition duration-300 shadow-xl transform hover:scale-105">
-                Explore Expertise
+    <!-- Main Navigation Bar -->
+    <header class="bg-[#161b22]/90 backdrop-blur-md border-b border-gray-800 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-xl sm:text-2xl font-extrabold text-[#2e8b57] tracking-wider">SAFEWAVE<span class="text-white">SOLUTIONS</span></span>
             </a>
-             <a href="https://www.credly.com/users/boateng-gabriel">CISCO CERTIFIED ETHICAL HACKER</a>
-        </section>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-[#38a865] transition duration-200">About</a>
+                <a href="#skills" class="hover:text-[#38a865] transition duration-200">Competencies</a>
+                <a href="#insights" class="hover:text-[#38a865] transition duration-200">Telemetry</a>
+                <a href="#contact" class="hover:text-[#38a865] transition duration-200">Contact</a>
+            </nav>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-16 bg-[#161b22] border-t border-b border-gray-700">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-12 text-white">Core Competencies</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Skill Card Template -->
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">🛠️</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Vulnerability Assessments</h3>
-                        <p class="text-gray-400 text-sm">Identifying and classifying security flaws in systems, networks, and applications using industry-standard tools and methodologies.</p>
-                    </div>
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">🧠</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Security Awareness Training</h3>
-                        <p class="text-gray-400 text-sm">Developing and delivering effective training programs to minimize human risk factors, focusing on phishing, social engineering, and safe practices.</p>
-                    </div>
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">🤝</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Basic Consulting</h3>
-                        <p class="text-gray-400 text-sm">Providing initial security advice, architecture reviews, and best-practice recommendations for small to medium-sized projects.</p>
-                    </div>
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">📝</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Documentation</h3>
-                        <p class="text-gray-400 text-sm">Creating clear, concise, and audit-ready reports, technical guides, and standard operating procedures (SOPs).</p>
-                    </div>
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">📜</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Policy Development</h3>
-                        <p class="text-gray-400 text-sm">Drafting foundational IT and security policies (e.g., AUP, Password Policy) compliant with common frameworks.</p>
-                    </div>
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">🦠</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">Malware Analysis</h3>
-                        <p class="text-gray-400 text-sm">Performing static and dynamic analysis to understand the behavior, intent, and capabilities of malicious software samples.</p>
-                    </div>
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">💻</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">OS Installation & Setup</h3>
-                        <p class="text-gray-400 text-sm">Expert in secure installation and configuration of Windows and Kali Linux environments for testing and operational use.</p>
-                    </div>
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">🍯</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">HONEYPOT Setups</h3>
-                        <p class="text-gray-400 text-sm">Deployment and configuration of low-interaction honeypots to attract, detect, and analyze unauthorized access attempts.</p>
-                    </div>
-                    <div class="bg-[#0d1117] p-6 rounded-xl shadow-2xl border border-[#2e8b57]/30 hover:shadow-[#2e8b57]/50 transition duration-300 transform hover:-translate-y-1">
-                        <div class="text-[#2e8b57] text-3xl mb-3">📜</div>
-                        <h3 class="text-xl font-semibold mb-2 text-white">PHISHING LINKS DETECTION</h3>
-                        <p class="text-gray-400 text-sm">Scanning, Analysing, and Detecting Phishing Links with powerful Windows and Linux base tool.</p>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Graphical Insights Section -->
-        <section id="insights" class="py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold text-center mb-12 text-white">Professional Insights & Metrics</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <!-- Insight 1: Project Distribution (Doughnut Chart) -->
-                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl border border-gray-700">
-                        <h3 class="text-2xl font-semibold mb-4 text-white">Skill Focus Distribution</h3>
-                        <canvas id="skillDoughnutChart" class="max-h-96"></canvas>
-                        <p class="text-sm text-gray-500 mt-4">Representation of time dedicated to different skill areas during project work.</p>
-                    </div>
-
-                    <!-- Insight 2: Completion Rate (Bar Chart) -->
-                    <div class="bg-[#161b22] p-6 rounded-xl shadow-2xl border border-gray-700">
-                        <h3 class="text-2xl font-semibold mb-4 text-white">Project Completion Rate (Past 6 Months)</h3>
-                        <canvas id="projectBarChart" class="max-h-96"></canvas>
-                        <p class="text-sm text-gray-500 mt-4">Metric tracking the successful execution of simulated and academic cybersecurity tasks.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact/Booking CTA Footer -->
-        <section id="contact" class="py-16 bg-[#0d1117] border-t border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold text-white mb-4">Ready to Discuss a Project?</h2>
-                <p>
-                    boatenggabriel129@gmail.com <br>
-                    TEL: +233595735907 <br>
-                    TEL: +233550969944 <br>
-                    LOC: ASYLUM DOWN - ACCRA <br>
-                    WORK: ARB APEX BANK PLC. <br>
-                    ABDUL NASSER GAMEL .
-                </p>
-                
-                <p class="text-lg text-gray-400 mb-8">Schedule a focused consultation to discuss your security needs or academic collaboration.</p>
-                <button onclick="showBookingModal()" class="inline-block bg-[#2e8b57] text-white px-10 py-4 rounded-xl text-xl font-semibold hover:bg-[#38a865] transition duration-300 shadow-xl transform hover:scale-105">
-                    Book Your Session Now
+            <div class="flex items-center space-x-3">
+                <!-- Dynamic Auth Button -->
+                <button id="auth-button" onclick="handleAuthButtonClick()" class="bg-[#1f2937] hover:bg-[#374151] text-emerald-400 border border-emerald-500/30 px-3.5 py-1.5 rounded-lg text-sm font-medium transition duration-200 shadow flex items-center gap-2">
+                    <span id="auth-status-dot" class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span id="auth-button-text">Login</span>
+                </button>
+                <button onclick="showBookingModal()" class="bg-[#2e8b57] hover:bg-[#38a865] text-white px-4 py-1.5 rounded-lg text-sm font-medium transition duration-200 shadow-md">
+                    Book a Session
                 </button>
             </div>
-        </section>
+        </div>
+    </header>
 
-        <!-- Footer -->
-        <footer class="bg-[#161b22] py-6 text-center text-sm text-gray-500 border-t border-gray-800">
-            &copy; 2025 SAFEWAVE SOLUTIONS ENTERPRISE Ltd. All rights reserved. Built with passion for Cybersecurity.
-        </footer>
+    <!-- Hero Section -->
+    <section id="about" class="py-16 md:py-24 text-center max-w-5xl mx-auto px-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Security Operations & Consulting
+        </div>
+        
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
+            BOATENG GABRIEL
+        </h1>
+        <h2 class="text-lg sm:text-xl font-semibold text-[#2e8b57] mb-6">
+            FOUNDER & CEO: SAFEWAVE SOLUTIONS ENTERPRISE LTD | GHANA
+        </h2>
 
-    </div>
+        <!-- Credentials Badges -->
+        <div class="bg-[#161b22] border border-gray-800 rounded-2xl p-6 max-w-3xl mx-auto mb-8 shadow-xl">
+            <p class="text-sm text-gray-400 font-medium mb-3">
+                BSc Cybersecurity • Ghana Communication Technology University
+            </p>
+            <div class="flex flex-wrap justify-center gap-2 text-xs font-semibold">
+                <span class="bg-[#0d1117] border border-emerald-600/40 text-emerald-400 px-3 py-1.5 rounded-lg">Cisco Certified Ethical Hacker</span>
+                <span class="bg-[#0d1117] border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg">Malware Analyst</span>
+                <span class="bg-[#0d1117] border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg">Phishing Detection</span>
+                <span class="bg-[#0d1117] border border-gray-700 text-gray-300 px-3 py-1.5 rounded-lg">Virus & Heuristic Scanning</span>
+            </div>
+        </div>
 
-    <!-- Booking Modal (Hidden by Default) -->
-    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center p-4">
-        <div class="bg-[#161b22] w-full max-w-lg p-8 rounded-xl shadow-2xl border border-[#2e8b57]/50">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-white">Book a Professional Session</h3>
-                <button onclick="hideBookingModal()" class="text-gray-400 hover:text-white transition duration-200 text-3xl leading-none">&times;</button>
+        <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+            Proactive security professional specializing in defensive and offensive security postures, digital threat reconnaissance, and robust enterprise threat mitigation.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#skills" class="bg-[#2e8b57] hover:bg-[#38a865] text-white px-6 py-3 rounded-xl font-medium transition duration-200 shadow-lg">
+                Explore Expertise
+            </a>
+            <a href="https://www.credly.com/users/boateng-gabriel" target="_blank" rel="noopener noreferrer" class="bg-[#161b22] hover:bg-[#1f2937] text-white border border-gray-700 px-6 py-3 rounded-xl font-medium transition duration-200 shadow-md inline-flex items-center gap-2">
+                <span>Verify Credly Badge</span>
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-[#161b22] border-t border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-2">Core Competencies</h2>
+                <p class="text-gray-400 text-sm">Specialized defensive, offensive, and engineering skillsets</p>
             </div>
 
-            <form id="booking-form" onsubmit="handleBookingSubmit(event)">
-                <div class="space-y-4">
-                    <!-- User Details -->
-                    <div>
-                        <label for="clientName" class="block text-sm font-medium text-gray-300 mb-1">Your Name</label>
-                        <input type="text" id="clientName" required class="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-600 focus:border-[#2e8b57] focus:ring focus:ring-[#2e8b57]/50 transition duration-150 text-white" placeholder="BOATENG GABRIEL" >
-                    </div>
-                    <div>
-                        <label for="clientEmail" class="block text-sm font-medium text-gray-300 mb-1">Your Email</label>
-                        <input type="email" id="clientEmail" required class="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-600 focus:border-[#2e8b57] focus:ring focus:ring-[#2e8b57]/50 transition duration-150 text-white" placeholder="contact@example.com">
-                    </div>
-
-                    <!-- Appointment Details -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label for="apptDate" class="block text-sm font-medium text-gray-300 mb-1">Date</label>
-                            <input type="date" id="apptDate" required class="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-600 focus:border-[#2e8b57] focus:ring focus:ring-[#2e8b57]/50 transition duration-150 text-white">
-                        </div>
-                        <div>
-                            <label for="apptTime" class="block text-sm font-medium text-gray-300 mb-1">Time</label>
-                            <input type="time" id="apptTime" required class="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-600 focus:border-[#2e8b57] focus:ring focus:ring-[#2e8b57]/50 transition duration-150 text-white">
-                        </div>
-                    </div>
-
-                    <!-- Message -->
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Purpose of Session</label>
-                        <textarea id="message" rows="3" required class="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-600 focus:border-[#2e8b57] focus:ring focus:ring-[#2e8b57]/50 transition duration-150 text-white" placeholder="Vulnerability assessment inquiry, project collaboration, etc."></textarea>
-                    </div>
-
-                    <!-- Status Message -->
-                    <p id="booking-status" class="text-sm text-center font-medium h-5"></p>
-
-                    <!-- Submit Button -->
-                    <button type="submit" id="submit-booking-btn" class="w-full bg-[#2e8b57] text-white p-3 rounded-lg font-semibold hover:bg-[#38a865] transition duration-200 shadow-lg disabled:opacity-50" disabled>
-                        Submit Booking (Sign In Required)
-                    </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">🛠️</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Vulnerability Assessments</h3>
+                    <p class="text-gray-400 text-sm">Identifying, classifying, and mitigating security flaws across enterprise networks using industry standard tools.</p>
                 </div>
+
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">🧠</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Security Awareness Training</h3>
+                    <p class="text-gray-400 text-sm">Designing structured human-risk mitigation programs against phishing and social engineering vectors.</p>
+                </div>
+
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">🤝</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Basic Security Consulting</h3>
+                    <p class="text-gray-400 text-sm">Targeted cybersecurity advisory, baseline security reviews, and defensive configuration guidance.</p>
+                </div>
+
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">📝</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Technical Documentation</h3>
+                    <p class="text-gray-400 text-sm">Creating clean, audit-ready technical reports, Incident Response guides, and Standard Operating Procedures (SOPs).</p>
+                </div>
+
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">📜</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Policy Development</h3>
+                    <p class="text-gray-400 text-sm">Authoring acceptable use (AUP), access management, and incident response frameworks compliant with ISO and NIST.</p>
+                </div>
+
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">🦠</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Malware Analysis</h3>
+                    <p class="text-gray-400 text-sm">Static and dynamic binary analysis in sandboxed environments to dissect payloads and identify indicators of compromise (IOCs).</p>
+                </div>
+
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">💻</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">OS Installation & Hardening</h3>
+                    <p class="text-gray-400 text-sm">Hardened configuration of enterprise Windows environments and Kali Linux penetration testing platforms.</p>
+                </div>
+
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">🍯</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Honeypot Architecture</h3>
+                    <p class="text-gray-400 text-sm">Setting low- and medium-interaction decoy nodes to attract, track, and profile malicious adversaries.</p>
+                </div>
+
+                <div class="bg-[#0d1117] p-6 rounded-xl cyber-border">
+                    <div class="text-2xl mb-3">🛡️</div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Phishing Link & Virus Detection</h3>
+                    <p class="text-gray-400 text-sm">Scanning, dissecting, and neutralizing fraudulent URLs and infected attachments across endpoint infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graphical Insights Section -->
+    <section id="insights" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-2">Operational Telemetry</h2>
+                <p class="text-gray-400 text-sm">Real-time breakdown of project allocation and completion rate metrics</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-[#161b22] p-6 rounded-xl border border-gray-800 shadow-xl">
+                    <h3 class="text-lg font-semibold mb-4 text-white">Skill Focus Distribution (%)</h3>
+                    <canvas id="skillDoughnutChart" class="max-h-72"></canvas>
+                </div>
+
+                <div class="bg-[#161b22] p-6 rounded-xl border border-gray-800 shadow-xl">
+                    <h3 class="text-lg font-semibold mb-4 text-white">Project Completion Rate (Past 6 Months)</h3>
+                    <canvas id="projectBarChart" class="max-h-72"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Direct Booking Section -->
+    <section id="contact" class="py-16 bg-[#161b22] border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-3">Ready to Discuss a Project?</h2>
+            <p class="text-gray-400 mb-8 text-sm">Direct corporate communications and advisory dispatch</p>
+            
+            <div class="bg-[#0d1117] border border-gray-800 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto mb-8 text-left space-y-3 text-sm">
+                <div class="flex items-center gap-3">
+                    <span class="text-[#2e8b57] font-bold w-20">EMAIL:</span>
+                    <a href="mailto:boatenggabriel129@gmail.com" class="text-gray-200 hover:text-emerald-400">boatenggabriel129@gmail.com</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-[#2e8b57] font-bold w-20">PHONE:</span>
+                    <span class="text-gray-200">+233 59 573 5907 / +233 55 096 9944</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-[#2e8b57] font-bold w-20">LOCATION:</span>
+                    <span class="text-gray-200">Asylum Down - Accra, Ghana</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-[#2e8b57] font-bold w-20">AFFILIATION:</span>
+                    <span class="text-gray-200">ARB Apex Bank PLC / Abdul Nasser Gamel Avenue</span>
+                </div>
+            </div>
+
+            <button onclick="showBookingModal()" class="bg-[#2e8b57] hover:bg-[#38a865] text-white px-8 py-3.5 rounded-xl text-lg font-semibold transition duration-200 shadow-xl transform hover:scale-105">
+                Book a Session Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0d1117] py-8 text-center text-xs text-gray-500 border-t border-gray-900">
+        &copy; 2025 SAFEWAVE SOLUTIONS ENTERPRISE LTD. All rights reserved. Engineered for high-assurance cybersecurity.
+    </footer>
+
+    <!-- ================= MODALS ================= -->
+
+    <!-- 1. Authentication Modal (Supabase Auth) -->
+    <div id="auth-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-[#161b22] w-full max-w-md p-6 sm:p-8 rounded-2xl border border-emerald-500/30 shadow-2xl">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h3 id="auth-modal-title" class="text-xl font-bold text-white">Client Portal Login</h3>
+                    <p class="text-xs text-gray-400">Authenticated via Supabase Auth</p>
+                </div>
+                <button onclick="hideAuthModal()" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="flex border-b border-gray-700 mb-6 text-sm font-medium">
+                <button id="tab-login" onclick="switchAuthMode('login')" class="flex-1 py-2 text-emerald-400 border-b-2 border-emerald-500">Sign In</button>
+                <button id="tab-signup" onclick="switchAuthMode('signup')" class="flex-1 py-2 text-gray-400 hover:text-gray-200">Sign Up</button>
+            </div>
+
+            <form id="auth-form" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Email Address</label>
+                    <input type="email" id="auth-email" required class="w-full p-2.5 rounded-lg bg-[#0d1117] border border-gray-700 focus:border-emerald-500 text-white text-sm outline-none" placeholder="analyst@safewave.com">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Password</label>
+                    <input type="password" id="auth-password" required minlength="6" class="w-full p-2.5 rounded-lg bg-[#0d1117] border border-gray-700 focus:border-emerald-500 text-white text-sm outline-none" placeholder="••••••••">
+                </div>
+                
+                <p id="auth-status-message" class="text-xs font-medium min-h-4"></p>
+
+                <button type="submit" id="auth-submit-btn" class="w-full bg-[#2e8b57] hover:bg-[#38a865] text-white py-2.5 rounded-lg text-sm font-semibold transition duration-150">
+                    Sign In
+                </button>
             </form>
-            <p class="text-xs text-gray-500 mt-4 text-center">Your request will be securely stored using Google Firestore.</p>
         </div>
     </div>
 
-    <!-- Firebase SDK Imports and Configuration -->
+    <!-- 2. Booking Modal (Supabase PostgreSQL Integration) -->
+    <div id="booking-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-[#161b22] w-full max-w-lg p-6 sm:p-8 rounded-2xl border border-emerald-500/30 shadow-2xl">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h3 class="text-xl font-bold text-white">Book a Professional Session</h3>
+                    <p class="text-xs text-gray-400">SafeWave Enterprise Consulting & Advisory</p>
+                </div>
+                <button onclick="hideBookingModal()" class="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
+            </div>
+
+            <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                <div>
+                    <label for="clientName" class="block text-xs font-semibold text-gray-300 mb-1">Your Full Name</label>
+                    <input type="text" id="clientName" required class="w-full p-2.5 rounded-lg bg-[#0d1117] border border-gray-700 focus:border-[#2e8b57] text-white text-sm outline-none" placeholder="Boateng Gabriel">
+                </div>
+                <div>
+                    <label for="clientEmail" class="block text-xs font-semibold text-gray-300 mb-1">Your Email Address</label>
+                    <input type="email" id="clientEmail" required class="w-full p-2.5 rounded-lg bg-[#0d1117] border border-gray-700 focus:border-[#2e8b57] text-white text-sm outline-none" placeholder="contact@example.com">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label for="apptDate" class="block text-xs font-semibold text-gray-300 mb-1">Date</label>
+                        <input type="date" id="apptDate" required class="w-full p-2.5 rounded-lg bg-[#0d1117] border border-gray-700 focus:border-[#2e8b57] text-white text-sm outline-none">
+                    </div>
+                    <div>
+                        <label for="apptTime" class="block text-xs font-semibold text-gray-300 mb-1">Time</label>
+                        <input type="time" id="apptTime" required class="w-full p-2.5 rounded-lg bg-[#0d1117] border border-gray-700 focus:border-[#2e8b57] text-white text-sm outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label for="message" class="block text-xs font-semibold text-gray-300 mb-1">Purpose / Scope of Session</label>
+                    <textarea id="message" rows="3" required class="w-full p-2.5 rounded-lg bg-[#0d1117] border border-gray-700 focus:border-[#2e8b57] text-white text-sm outline-none" placeholder="Vulnerability Assessment, Phishing Campaign, Incident Advisory..."></textarea>
+                </div>
+
+                <p id="booking-status" class="text-xs font-medium text-center min-h-5"></p>
+
+                <button type="submit" id="submit-booking-btn" class="w-full bg-[#2e8b57] hover:bg-[#38a865] text-white py-3 rounded-lg text-sm font-semibold transition duration-150 shadow-lg">
+                    Confirm & Submit Booking
+                </button>
+            </form>
+            <p class="text-[11px] text-gray-500 mt-3 text-center">Data is secured and recorded into your Supabase PostgreSQL cluster.</p>
+        </div>
+    </div>
+
+    <!-- 3. Confirmation Acknowledgment Modal -->
+    <div id="confirmation-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden items-center justify-center p-4">
+        <div class="bg-[#161b22] w-full max-w-md p-6 rounded-2xl border border-emerald-500/50 shadow-2xl text-center">
+            <div class="w-14 h-14 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto mb-4 text-2xl">
+                ✓
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Booking Confirmed!</h3>
+            <p class="text-xs text-gray-400 mb-4">
+                Your consultation has been securely logged with SafeWave Solutions.
+            </p>
+            
+            <div class="bg-[#0d1117] border border-gray-800 rounded-xl p-4 text-left text-xs space-y-2 mb-6">
+                <div><span class="text-gray-400">Client:</span> <strong id="ack-name" class="text-white"></strong></div>
+                <div><span class="text-gray-400">Acknowledgment Sent To:</span> <strong id="ack-email" class="text-emerald-400"></strong></div>
+                <div><span class="text-gray-400">Scheduled Date:</span> <strong id="ack-date" class="text-white"></strong></div>
+                <div><span class="text-gray-400">Scheduled Time:</span> <strong id="ack-time" class="text-white"></strong></div>
+            </div>
+
+            <p class="text-[11px] text-gray-400 mb-6 leading-relaxed">
+                A confirmation record has been generated. CEO Boateng Gabriel will contact you ahead of your scheduled session.
+            </p>
+
+            <button onclick="hideConfirmationModal()" class="w-full bg-[#2e8b57] hover:bg-[#38a865] text-white py-2.5 rounded-lg text-sm font-semibold transition">
+                Close & Return
+            </button>
+        </div>
+    </div>
+
+    <!-- Supabase Client Logic and Scripts -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
-        // Set log level for debugging
-        setLogLevel('error'); // Changed from 'Debug' to 'error' for cleaner console output unless issues arise
+        // --- 1. SUPABASE CONNECTION ---
+        const SUPABASE_URL = "https://lvmdjngatbpokwnnxqsv.supabase.co";
+        const SUPABASE_ANON_KEY = "sb_publishable_Yu97HgAQeHXN_wVZS8FNqA_Bzewb8SD";
 
-        let app, db, auth;
-        let userId = null;
-        let isAuthReady = false;
+        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        // Global variables provided by the environment (MANDATORY USE)
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        // Optional EmailJS Credentials (If you want direct client-side email dispatch):
+        // Sign up at emailjs.com -> enter your Service, Template, and Public key here:
+        const EMAILJS_PUBLIC_KEY = ""; // e.g. "user_xxxxxxxxxxxx"
+        const EMAILJS_SERVICE_ID = ""; // e.g. "service_xxxxxxx"
+        const EMAILJS_TEMPLATE_ID = ""; // e.g. "template_xxxxxxx"
+
+        if (EMAILJS_PUBLIC_KEY && window.emailjs) {
+            window.emailjs.init(EMAILJS_PUBLIC_KEY);
+        }
+
+        // State variables
+        let currentUser = null;
+        let authMode = 'login';
 
         const authButton = document.getElementById('auth-button');
+        const authButtonText = document.getElementById('auth-button-text');
+        const authStatusDot = document.getElementById('auth-status-dot');
         const submitBookingBtn = document.getElementById('submit-booking-btn');
 
-        // --- 1. FIREBASE INITIALIZATION AND AUTHENTICATION ---
-        function initFirebase() {
-            if (!firebaseConfig) {
-                console.error("Firebase config is missing. Cannot initialize database features.");
-                authButton.textContent = 'DB Error';
-                return;
-            }
-
+        // Check authentication session on load
+        async function checkSession() {
             try {
-                app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-                
-                // 2. Set up Auth State Listener
-                onAuthStateChanged(auth, (user) => {
-                    isAuthReady = true;
-                    if (user) {
-                        userId = user.uid;
-                        authButton.textContent = 'Sign Out';
-                        authButton.onclick = handleSignOut;
-                        authButton.classList.add('bg-red-600', 'hover:bg-red-700');
-                        authButton.classList.remove('bg-[#2e8b57]', 'hover:bg-[#38a865]');
-                        submitBookingBtn.disabled = false;
-                        submitBookingBtn.textContent = 'Submit Booking';
-                        console.log("User authenticated:", userId);
-                    } else {
-                        userId = null;
-                        authButton.textContent = 'Sign In to Book';
-                        authButton.onclick = handleSignIn;
-                        authButton.classList.remove('bg-red-600', 'hover:bg-red-700');
-                        authButton.classList.add('bg-[#2e8b57]', 'hover:bg-[#38a865]');
-                        submitBookingBtn.disabled = true;
-                        submitBookingBtn.textContent = 'Submit Booking (Sign In Required)';
-                        console.log("User signed out or anonymous.");
-                    }
+                const { data: { session } } = await supabase.auth.getSession();
+                updateAuthUI(session?.user || null);
+
+                supabase.auth.onAuthStateChange((_event, session) => {
+                    updateAuthUI(session?.user || null);
                 });
-
-                // 3. Initial Sign In Attempt
-                handleInitialSignIn();
-
-            } catch (e) {
-                console.error("Firebase initialization failed:", e);
-                authButton.textContent = 'Login Here';
+            } catch (err) {
+                console.error("Session check error:", err);
             }
         }
 
-        async function handleInitialSignIn() {
-            try {
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                    console.log("Signed in with custom token.");
-                } else {
-                    await signInAnonymously(auth);
-                    console.log("Signed in anonymously.");
+        function updateAuthUI(user) {
+            currentUser = user;
+            if (user) {
+                authButtonText.textContent = user.email.split('@')[0];
+                authStatusDot.className = "w-2 h-2 rounded-full bg-emerald-400";
+                authButton.title = `Signed in as ${user.email} (Click to Sign Out)`;
+                
+                // Pre-fill email in booking form
+                const emailInput = document.getElementById('clientEmail');
+                if (emailInput && !emailInput.value) {
+                    emailInput.value = user.email;
                 }
-            } catch (error) {
-                console.error("Authentication failed:", error);
+            } else {
+                authButtonText.textContent = 'Login';
+                authStatusDot.className = "w-2 h-2 rounded-full bg-gray-400";
+                authButton.title = "Click to login or create an account";
             }
         }
 
-        async function handleSignIn() {
-            // Re-attempt sign-in if the user explicitly clicks the button and is currently logged out
-            if (!auth.currentUser) {
-                await handleInitialSignIn();
+        // --- AUTH MODAL ACTIONS ---
+        window.handleAuthButtonClick = async () => {
+            if (currentUser) {
+                const confirmSignOut = window.confirm(`Signed in as ${currentUser.email}. Do you want to sign out?`);
+                if (confirmSignOut) {
+                    await supabase.auth.signOut();
+                }
+            } else {
+                document.getElementById('auth-modal').style.display = 'flex';
             }
-        }
+        };
 
-        async function handleSignOut() {
+        window.hideAuthModal = () => {
+            document.getElementById('auth-modal').style.display = 'none';
+            document.getElementById('auth-status-message').textContent = '';
+        };
+
+        window.switchAuthMode = (mode) => {
+            authMode = mode;
+            const loginTab = document.getElementById('tab-login');
+            const signupTab = document.getElementById('tab-signup');
+            const submitBtn = document.getElementById('auth-submit-btn');
+            const title = document.getElementById('auth-modal-title');
+            const status = document.getElementById('auth-status-message');
+            status.textContent = '';
+
+            if (mode === 'login') {
+                loginTab.className = "flex-1 py-2 text-emerald-400 border-b-2 border-emerald-500 font-semibold";
+                signupTab.className = "flex-1 py-2 text-gray-400 hover:text-gray-200";
+                submitBtn.textContent = "Sign In";
+                title.textContent = "Client Portal Login";
+            } else {
+                signupTab.className = "flex-1 py-2 text-emerald-400 border-b-2 border-emerald-500 font-semibold";
+                loginTab.className = "flex-1 py-2 text-gray-400 hover:text-gray-200";
+                submitBtn.textContent = "Create Account";
+                title.textContent = "Register Client Account";
+            }
+        };
+
+        window.handleAuthSubmit = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('auth-email').value.trim();
+            const password = document.getElementById('auth-password').value;
+            const status = document.getElementById('auth-status-message');
+            const submitBtn = document.getElementById('auth-submit-btn');
+
+            status.className = "text-xs font-medium text-emerald-400";
+            status.textContent = "Processing...";
+            submitBtn.disabled = true;
+
             try {
-                await auth.signOut();
-            } catch (error) {
-                console.error("Error signing out:", error);
+                if (authMode === 'login') {
+                    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+                    if (error) throw error;
+                    status.textContent = "Login successful!";
+                    setTimeout(window.hideAuthModal, 1000);
+                } else {
+                    const { data, error } = await supabase.auth.signUp({ email, password });
+                    if (error) throw error;
+                    status.textContent = "Account created! You can now sign in.";
+                    setTimeout(() => window.switchAuthMode('login'), 1500);
+                }
+            } catch (err) {
+                status.className = "text-xs font-medium text-red-400";
+                status.textContent = err.message || "Authentication error occurred.";
+            } finally {
+                submitBtn.disabled = false;
             }
-        }
+        };
 
-        // --- 2. APPOINTMENT BOOKING LOGIC ---
-
+        // --- BOOKING LOGIC ---
         window.showBookingModal = () => {
             const modal = document.getElementById('booking-modal');
             modal.style.display = 'flex';
         };
 
         window.hideBookingModal = () => {
-            const modal = document.getElementById('booking-modal');
-            modal.style.display = 'none';
+            document.getElementById('booking-modal').style.display = 'none';
         };
 
-        window.handleBookingSubmit = async (event) => {
-            event.preventDefault();
-            const statusEl = document.getElementById('booking-status');
-            const form = event.target;
-            
-            if (!userId || !db) {
-                statusEl.innerHTML = '<span class="text-red-500">Error: User not signed in or DB not ready.</span>';
-                return;
-            }
+        window.showConfirmationModal = (details) => {
+            document.getElementById('ack-name').textContent = details.name;
+            document.getElementById('ack-email').textContent = details.email;
+            document.getElementById('ack-date').textContent = details.date;
+            document.getElementById('ack-time').textContent = details.time;
+            document.getElementById('confirmation-modal').style.display = 'flex';
+        };
 
-            statusEl.innerHTML = '<span class="text-[#2e8b57]">Processing...</span>';
+        window.hideConfirmationModal = () => {
+            document.getElementById('confirmation-modal').style.display = 'none';
+        };
+
+        // Optional dispatch helper for client-side EmailJS
+        async function dispatchEmailAcknowledgment(bookingData) {
+            if (EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && window.emailjs) {
+                try {
+                    await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        client_name: bookingData.client_name,
+                        client_email: bookingData.client_email,
+                        appointment_date: bookingData.appointment_date,
+                        appointment_time: bookingData.appointment_time,
+                        purpose: bookingData.purpose,
+                    });
+                    console.log("Acknowledgment email sent via EmailJS.");
+                } catch (emailErr) {
+                    console.warn("EmailJS notification failed (Supabase database record is still safe):", emailErr);
+                }
+            }
+        }
+
+        window.handleBookingSubmit = async (e) => {
+            e.preventDefault();
+            const statusEl = document.getElementById('booking-status');
+            const form = e.target;
+
+            const clientName = document.getElementById('clientName').value.trim();
+            const clientEmail = document.getElementById('clientEmail').value.trim();
+            const apptDate = document.getElementById('apptDate').value;
+            const apptTime = document.getElementById('apptTime').value;
+            const message = document.getElementById('message').value.trim();
+
+            statusEl.className = "text-xs font-medium text-emerald-400";
+            statusEl.textContent = "Securing appointment and generating confirmation...";
             submitBookingBtn.disabled = true;
 
-            const bookingData = {
-                clientName: document.getElementById('clientName').value,
-                clientEmail: document.getElementById('clientEmail').value,
-                apptDate: document.getElementById('apptDate').value,
-                apptTime: document.getElementById('apptTime').value,
-                message: document.getElementById('message').value,
-                bookedByUid: userId,
-                timestamp: new Date().toISOString()
+            const bookingPayload = {
+                client_name: clientName,
+                client_email: clientEmail,
+                appointment_date: apptDate,
+                appointment_time: apptTime,
+                purpose: message,
+                user_id: currentUser ? currentUser.id : null
             };
 
-            // Firestore Path: Private data for this specific user
-            const bookingsPath = `/artifacts/${appId}/users/${userId}/appointments`;
-
             try {
-                const docRef = await addDoc(collection(db, bookingsPath), bookingData);
-                statusEl.innerHTML = '<span class="text-[#38a865]">Success! Booking submitted (ID: ' + docRef.id + ')</span>';
+                // 1. Insert into Supabase table
+                const { data, error } = await supabase
+                    .from('appointments')
+                    .insert([bookingPayload]);
+
+                if (error) throw error;
+
+                // 2. Trigger acknowledgment email (if EmailJS keys are provided)
+                await dispatchEmailAcknowledgment(bookingPayload);
+
+                // 3. Close the booking form and show acknowledgment card
+                window.hideBookingModal();
                 form.reset();
-                setTimeout(hideBookingModal, 3000);
-            } catch (e) {
-                console.error("Error adding document: ", e);
-                statusEl.innerHTML = '<span class="text-red-500">Error: Failed to save booking. Check console.</span>';
+                statusEl.textContent = '';
+
+                window.showConfirmationModal({
+                    name: clientName,
+                    email: clientEmail,
+                    date: apptDate,
+                    time: apptTime
+                });
+
+            } catch (err) {
+                console.error("Booking error:", err);
+                statusEl.className = "text-xs font-medium text-red-400";
+                statusEl.textContent = "Error: " + (err.message || "Failed to record appointment.");
             } finally {
                 submitBookingBtn.disabled = false;
             }
         };
 
-        // --- 3. CHART.JS INITIALIZATION FOR GRAPHICAL INSIGHTS ---
-
+        // --- CHARTS (Telemetry Visualizations) ---
         function initCharts() {
-            // Doughnut Chart Data (Skill Focus)
             const doughnutCtx = document.getElementById('skillDoughnutChart').getContext('2d');
             new Chart(doughnutCtx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Vulnerability Assessment', 'Policy & Documentation', 'Malware Analysis', 'Awareness/Consulting'],
+                    labels: ['Vulnerability Assessment', 'Malware Analysis', 'Phishing & Honeypots', 'Policy & Hardening'],
                     datasets: [{
-                        label: 'Project Focus',
-                        data: [35, 25, 20, 20], // Mock percentages
+                        data: [35, 25, 25, 15],
                         backgroundColor: [
-                            'rgba(46, 139, 87, 0.8)', // SeaGreen - Primary
-                            'rgba(189, 183, 107, 0.8)', // DarkKhaki
-                            'rgba(135, 206, 235, 0.8)', // SkyBlue
-                            'rgba(255, 165, 0, 0.8)' // Orange
+                            'rgba(46, 139, 87, 0.85)',
+                            'rgba(14, 165, 233, 0.85)',
+                            'rgba(245, 158, 11, 0.85)',
+                            'rgba(139, 92, 246, 0.85)'
                         ],
                         borderColor: '#0d1117',
                         borderWidth: 2
@@ -419,60 +582,43 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     plugins: {
-                        legend: {
-                            position: 'top',
-                            labels: { color: '#c9d1d9' }
-                        },
-                        title: {
-                            display: false
-                        }
+                        legend: { position: 'bottom', labels: { color: '#9ca3af', font: { size: 11 } } }
                     }
                 }
             });
 
-            // Bar Chart Data (Project Completion)
             const barCtx = document.getElementById('projectBarChart').getContext('2d');
             new Chart(barCtx, {
                 type: 'bar',
                 data: {
                     labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
                     datasets: [{
-                        label: 'Tasks Completed (%)',
-                        data: [75, 80, 95, 88, 92, 100], // Mock completion percentages
-                        backgroundColor: 'rgba(46, 139, 87, 0.7)', // SeaGreen
+                        label: 'Tasks Resolved (%)',
+                        data: [82, 88, 92, 90, 96, 100],
+                        backgroundColor: 'rgba(46, 139, 87, 0.75)',
                         borderColor: 'rgba(46, 139, 87, 1)',
-                        borderWidth: 1
+                        borderWidth: 1,
+                        borderRadius: 6
                     }]
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: { color: '#c9d1d9' },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                        },
-                        x: {
-                            ticks: { color: '#c9d1d9' },
-                            grid: { display: false }
-                        }
+                        y: { beginAtZero: true, max: 100, ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255, 255, 255, 0.05)' } },
+                        x: { ticks: { color: '#9ca3af' }, grid: { display: false } }
                     },
-                    plugins: {
-                        legend: { display: false },
-                        title: { display: false }
-                    }
+                    plugins: { legend: { display: false } }
                 }
             });
         }
 
-        // --- 4. LIFECYCLE HOOKS ---
         window.onload = function() {
-            initFirebase();
+            checkSession();
             initCharts();
         };
-
     </script>
 </body>
 </html>
